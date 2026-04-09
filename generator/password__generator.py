@@ -24,3 +24,16 @@ def has_symbol(password):
 def has_numbers(password):
     return any(c.isdigit() for c in password)
 
+def validate_password(password):
+    return (
+        has_uppercase(password) and
+        has_symbol(password) and
+        has_numbers(password)
+    )
+
+def generate_secure_password(length=12):
+    while True:
+        password = generate_password(length)
+        if validate_password(password):
+            return password
+   
