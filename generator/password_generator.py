@@ -3,9 +3,9 @@ import random
 import string
 def generate_password(length=12):
     characters = (
-        string.ascii_lowercase,
-        string.ascii_uppercase,
-        string.digits,
+        string.ascii_lowercase +
+        string.ascii_uppercase +
+        string.digits +
         string.punctuation
     )
     

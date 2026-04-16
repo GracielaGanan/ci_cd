@@ -1,4 +1,4 @@
-from generator.password__generator import (generate_password
+from generator.password_generator import (generate_password
 ,has_uppercase 
 ,has_symbol
 ,has_numbers

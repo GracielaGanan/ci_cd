@@ -1,0 +1,34 @@
+
+name: Run test
+
+
+on: [  push, pull_request]
+
+
+permissions:
+  contents: read
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: action-setup-python
+        uses: actions/setup-python@v5        
+        with:
+          python-version: 3.13.5
+
+      - name: Install Dependencies
+        run: pip Install -r requirements-dev.txt
+
+      - name: check listing
+        run: flake8 .
+
+      - name: run tests
+        run: pytest
+        
+      
+
+

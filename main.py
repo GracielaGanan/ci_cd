@@ -1,7 +1,6 @@
 import sys
 from generator.password_generator import generate_password
 
-
 def main():
 
     if len(sys.argv) < 2:
@@ -21,6 +20,7 @@ def main():
     password = generate_password(length)
 
     print("Contraseña generada:", password)
+    
 
 
 if __name__ == "__main__":
