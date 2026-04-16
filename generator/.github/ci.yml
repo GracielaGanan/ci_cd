@@ -1,32 +1,30 @@
 
 name: Run test
 
-
-on: [  push, pull_request]
-
-
-permissions:
-  contents: read
-  contents: write
+on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: action-setup-python
-        uses: actions/setup-python@v5        
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.13.5
+          python-version: "3.13"
 
       - name: Install Dependencies
-        run: pip Install -r requirements-dev.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
 
-      - name: check listing
+      - name: Lint code
         run: flake8 .
 
-      - name: run tests
+      - name: Run tests
         run: pytest
         
       
