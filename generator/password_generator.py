@@ -36,4 +36,7 @@ def generate_secure_password(length=12):
         password = generate_password(length)
         if validate_password(password):
             return password
+
+
+
    
