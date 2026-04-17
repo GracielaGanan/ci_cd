@@ -1,4 +1,3 @@
-
 name: Run test
 
 on: [push, pull_request]
@@ -27,18 +26,18 @@ jobs:
       - name: Run tests
         run: pytest
 
-       - name: Login to GitHub Container Registry
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ghcr.io/{ github.actor }/generator_pass:latest
-
+          tags: ghcr.io/${{ github.actor }}/generator_pass:latest
       
 
       
