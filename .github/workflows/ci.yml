@@ -1,3 +1,4 @@
+
 name: Run test
 
 on: [push, pull_request]
@@ -41,4 +42,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ghcr.io/${{ github.actor }}/generator_pass:latest
+          tags: ghcr.io/gracielaganan/generator_pass:latest
