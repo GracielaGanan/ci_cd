@@ -4,11 +4,12 @@ from generator.password_generator import (
     has_symbol,
     has_numbers,
 )
-# creamos funciones q van a testear
+
 
 def test_password_length():
     password = generate_password()
     assert len(password) == 12
+
 
 def test_password_is_string():
     password = generate_password(10)
