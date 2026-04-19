@@ -1,8 +1,8 @@
-from generator.password_generator import (generate_password
-,has_uppercase 
-,has_symbol
-,has_numbers
-
+from generator.password_generator import (
+    generate_password,
+    has_uppercase,
+    has_symbol,
+    has_numbers,
 )
 # creamos funciones q van a testear
 
@@ -20,7 +20,7 @@ def test_has_uppercase():
 
 
 def test_has_number():
-    assert has_number("abc1") is True
+    assert has_numbers("abc1") is True
 
 
 def test_has_symbol():
